@@ -55,6 +55,8 @@ export interface Project {
   attribution: { mine: string[]; brand: string[]; today: string[] };
   /** Optional diagram: audiences or stages side by side, with a shared base line. */
   ecosystem?: { eyebrow: string; title: string; columns: { tag: string; title: string; text: string }[]; base?: string[]; caption?: string };
+  /** Optional assessment diagram (dimensions and reading levels). */
+  assessment?: { title: string; dimensions: string[]; levels: string[]; note: string };
   /** Optional full-width feature inside the case study (for example a creative production). */
   feature?: {
     title: string;

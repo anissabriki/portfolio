@@ -4,7 +4,7 @@ export const kinassayLab: Project = {
   slug: 'kinassay-lab',
   order: 5,
   title: 'Kinassay Lab',
-  subtitle: 'Building an AI-Powered Digital Strategy Studio',
+  subtitle: 'Building a Digital-First Creative & Strategy Studio for Medical Aesthetics',
   client: 'Kinassay Lab',
   period: 'Kinassay Lab · Founder',
   category: ['Entrepreneurship', 'AI', 'Digital Product', 'CRM', 'Lead Generation'],
@@ -16,11 +16,11 @@ export const kinassayLab: Project = {
     'Kinassay Lab is my independent digital strategy and creative studio, focused on healthcare and medical aesthetics. It is a separate, more recent project than my corporate experience.',
     'I built the whole ecosystem myself, working with Claude Code as a development partner: positioning, website, the Kinassay Scan assessment, lead capture, CRM and campaign pages.',
   ],
-  challenge: 'How do you build a credible studio and a working lead-generation system from nothing, as one person, for an audience of doctors who have little time and high standards?',
+  challenge: 'Aesthetic doctors build their reputation over years, yet online it is often scattered: a website, a Google listing, social accounts and reviews that do not tell the same story. Patients choose long before the consultation. The opportunity: a studio that brings visibility, authority and patient acquisition into one coherent presence.',
   role: ['Founder', 'Brand and business strategy', 'Product design', 'AI-assisted development', 'CRM and lead generation'],
   strategy: [
-    { title: 'Brand & business strategy', items: ['Brand positioning', 'Service architecture', 'Target audience definition', 'Digital strategy', 'Brand messaging', 'Lead-generation strategy'] },
-    { title: 'Website', items: ['Website structure', 'UX/UI', 'Responsive design', 'SEO foundations', 'Conversion-focused pages', 'Calls to action', 'Contact and booking journeys'] },
+    { title: 'Brand & strategy', items: ['Brand positioning', 'Identity', 'Target audience', 'Service architecture', 'Value proposition', 'Lead-generation strategy'] },
+    { title: 'Website & digital experience', items: ['UX/UI design', 'Website architecture', 'Lead-generation approach', 'Conversion CTAs', 'Bilingual content (EN / FR)', 'SEO and discoverability'] },
     { title: 'Kinassay Scan', items: ['Questionnaire design', 'Scoring methodology', 'User experience', 'Results by email', 'Lead qualification'] },
   ],
   ecosystem: {
@@ -33,7 +33,13 @@ export const kinassayLab: Project = {
       { tag: '04', title: 'CRM & Automation', text: 'Lead storage and follow-up. See below for what is live and what is planned.' },
     ],
   },
-  journey: { title: 'End to end, built by one person', steps: ['Brand strategy', 'Website development', 'Kinassay Scan', 'Scoring', 'CRM', 'Email automation', 'Lead generation'] },
+  journey: { title: 'The customer journey', steps: ['Website visitor', 'Kinassay Scan', 'Lead qualification', 'Consultation', 'Follow-up'] },
+  assessment: {
+    title: 'Kinassay Scan: how the assessment is structured',
+    dimensions: ['Medical Authority', 'Digital Authority', 'Brand Expression', 'Discoverability', 'Content Potential', 'Patient Journey'],
+    levels: ['Established', 'Strong Potential', 'To Elevate'],
+    note: 'Eleven questions, about four minutes. Each dimension is read on three levels, from the practitioner’s own answers. The scoring rules themselves are not published.',
+  },
   execution: [
     'The positioning came first: a studio dedicated to aesthetic medicine, built around three levers (be found, be trusted, be chosen) and one primary action, booking a first meeting.',
     'The website is bilingual (English and French) and was developed with Claude Code as static HTML, CSS and JavaScript, with build scripts that check the site before each release. It is deployed on GitHub Pages.',
@@ -76,7 +82,7 @@ export const kinassayLab: Project = {
     'What I took from it: AI-assisted development changes what a strategist can ship. I can now design a journey and build it, test it and put it online in the same week.',
   ],
   attribution: {
-    mine: ['Everything: positioning, design direction, content, product logic, development with Claude Code, deployment and operations'],
+    mine: ['Brand strategy: positioning, identity, audience and service architecture', 'Product thinking: the Kinassay Scan, its questions and its reading', 'Website creation with AI-assisted development, deployment and operations', 'Marketing and business development: content, campaign pages, prospecting'],
     brand: ['Third-party services the system relies on: GitHub, Cloudflare, Resend, Google Calendar'],
     today: ['The site is live and evolving. Each feature above is labelled LIVE, IN DEVELOPMENT or PLANNED.'],
   },

@@ -3,8 +3,8 @@ export const ui = {
   nav: { home: 'Home', work: 'Work', expertise: 'Expertise', about: 'About', contact: 'Contact' },
   cta: { work: 'Explore My Work', contact: 'Get in Touch', cv: 'Download CV', next: 'Next project', all: 'All work' },
   labels: {
-    overview: 'Project overview', challenge: 'The challenge', role: 'My role', strategy: 'Strategy', execution: 'Execution',
-    tools: 'Tools and platforms', evidence: 'Visual evidence', results: 'Results and learnings', attribution: 'What was mine, what was the brand’s',
+    overview: 'Overview', challenge: '01 — The Challenge', role: 'My role', strategy: '02 — The Strategy', contribution: '03 — My Contribution', execution: '04 — Execution',
+    tools: 'Tools and platforms', evidence: 'Visual evidence', results: '05 — Impact & Learnings', attribution: 'What was mine, what was the brand’s',
     mine: 'My contribution', brand: 'Broader brand initiative', today: 'Today', period: 'Period', category: 'Category', toConfirm: 'to confirm',
   },
 };

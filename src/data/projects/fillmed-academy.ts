@@ -4,7 +4,7 @@ export const fillmedAcademy: Project = {
   slug: 'fillmed-academy',
   order: 3,
   title: 'FILLMED E-Academy',
-  subtitle: 'Building a Connected Medical Learning Experience',
+  subtitle: 'Building a Smarter Digital Learning Experience for Healthcare Professionals',
   client: 'FILLMED Laboratories',
   period: 'FILLMED',
   category: ['Digital Learning', 'CRM', 'Email Automation', 'HCP Engagement'],
@@ -21,11 +21,12 @@ export const fillmedAcademy: Project = {
   strategy: [
     { title: 'Platform restructuring', items: ['E-learning information architecture', 'Course organisation', 'User experience', 'Training content structure', 'Physician onboarding'] },
     { title: 'CRM', items: ['HCP database segmentation', 'Contact management', 'Training-related communication', 'User lifecycle strategy'] },
-    { title: 'Email marketing', items: ['Newsletters', 'Educational email campaigns', 'Training invitations', 'Webinar invitations', 'Follow-up communication', 'A/B testing'] },
+    { title: 'Email & testing', items: ['Newsletters', 'Educational email campaigns', 'Training invitations', 'Webinar invitations', 'Follow-up communication', 'A/B testing'] },
     { title: 'Automation', items: ['Welcome journeys', 'Training reminders', 'Course follow-ups', 'Segmented communication', 'Re-engagement journeys'] },
   ],
-  journey: { title: 'Illustrative user journey', steps: ['Doctor registration', 'CRM segmentation', 'Personalised onboarding email', 'Training or webinar', 'Follow-up and engagement'] },
+  journey: { title: 'User journey · illustrative structure', steps: ['Doctor registration', 'CRM segmentation', 'Onboarding', 'Educational content', 'Webinar or training', 'Follow-up'] },
   execution: [
+    'Each action answered a simple question: what stops a busy physician from learning here? Structure, so a course is found in seconds. Segmentation, so an invitation is relevant. Timing, so a reminder arrives when it is useful.',
     'The platform work was about making training easy to find and easy to follow: a clearer course structure, a simpler path for a physician who registers for the first time.',
     'The CRM work gave that platform an audience: a segmented professional database, so that an invitation to a training or a webinar reaches the practitioners it is relevant to.',
     'Email connected the two. Newsletters, educational campaigns, invitations and follow-ups carried the learning content out to physicians and brought them back to the platform.',

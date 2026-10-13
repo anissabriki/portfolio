@@ -90,6 +90,32 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
       </section>
     )}
 
+    {p.assessment && (
+      <section class="wrap py-14 md:py-20">
+        <h2 class="display max-w-[20ch] text-[clamp(2rem,4.4vw,3.8rem)]">{p.assessment.title}</h2>
+        <div class="mt-10 grid gap-px border border-line bg-line md:grid-cols-3">
+          {p.assessment.dimensions.map((d, k) => (
+            <div class="reveal bg-paper p-6">
+              <p class="font-serif text-2xl italic text-burgundy">{String(k + 1).padStart(2, '0')}</p>
+              <p class="mt-2 font-serif text-3xl leading-tight">{d}</p>
+              <p class="mt-5 flex gap-1.5" aria-hidden="true">{p.assessment!.levels.map((_, i) => <span class:list={['h-1.5 flex-1', i === 0 ? 'bg-burgundy' : i === 1 ? 'bg-rose' : 'bg-line']}></span>)}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm font-semibold">
+          {p.assessment.levels.map((l, i) => <span class="flex items-center gap-2"><span class:list={['inline-block h-2 w-6', i === 0 ? 'bg-burgundy' : i === 1 ? 'bg-rose' : 'bg-line']}></span>{l}</span>)}
+        </p>
+        <p class="mt-4 max-w-2xl text-muted">{p.assessment.note}</p>
+      </section>
+    )}
+
+    <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.contribution}</h2>
+      <ul class="md:col-span-9">
+        {p.attribution.mine.map((m) => <li class="reveal border-b border-line py-5 font-serif text-[clamp(1.5rem,2.6vw,2.2rem)] leading-tight">{m}</li>)}
+      </ul>
+    </section>
+
     <section class="hidden">
       <div>
       </div>
@@ -171,7 +197,7 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
     <section class="bg-paper-2 py-14 md:py-20">
       <div class="wrap">
         <h2 class="eyebrow">{L.evidence}</h2>
-        <div class="mt-8 grid gap-x-8 gap-y-12 md:grid-cols-2">{evidence.map((e) => <Asset item={e} />)}</div>
+        <div class="mt-8 grid gap-x-8 gap-y-12 md:grid-cols-2">{evidence.map((e, k) => <Asset item={{ ...e, wide: e.wide || (k === 0 && evidence.length % 2 === 1) }} />)}</div>
       </div>
     </section>
     )}

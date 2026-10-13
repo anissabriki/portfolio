@@ -17,9 +17,9 @@ export const medicalEvents: Project = {
     'At FILLMED I took part in international medical events, working with physicians and Key Opinion Leaders and on the communication that surrounds each event: before, during and after.',
   ],
   challenge: 'How do you turn a few days at a congress into lasting engagement with physicians, and make scientific content, brand presence and digital communication work as one?',
-  role: ['International event coordination', 'Medical congress activation', 'KOL relationships', 'Physician communication', 'Event promotion', 'Creative production'],
+  role: ['International event coordination', 'Medical congress activation', 'KOL and physician engagement', 'Scientific symposiums', 'Event communication', 'Cross-functional collaboration'],
   strategy: [
-    { title: 'Before the event', items: ['Event promotion', 'Email invitations', 'Event registration journeys', 'Webinar campaigns'] },
+    { title: 'Before the event', items: ['Event communication', 'Email invitations', 'Event registration journeys', 'Webinar coordination'] },
     { title: 'During the event', items: ['Medical congress activation', 'Scientific speaker coordination', 'Educational content', 'Creative production'] },
     { title: 'After the event', items: ['Post-event communication', 'Physician communication', 'Follow-up through CRM'] },
   ],
@@ -27,7 +27,7 @@ export const medicalEvents: Project = {
   execution: [
     'Two congresses anchor the calendar: the IMCAS World Congress in Paris and AMWC in Monaco. Around them sit other international congresses, training sessions, webinars and symposium replays made available to physicians afterwards.',
     'Key Opinion Leaders are central to this work. A KOL is a practitioner whose clinical experience and voice carry weight with peers: marketing provides the stage and the audience, medical teams ensure scientific accuracy, and the KOL brings the practice. My part was the coordination between these three.',
-    'One creative project stands apart: a 3D syringe production, where a medical product became a piece of visual storytelling.',
+    'Events are cross-functional by nature: marketing, medical, sales and production teams work to the same deadline. One creative activation I remember well is a 3D syringe production, where a medical product became a piece of visual storytelling.',
   ],
   feature: {
     title: 'FILLMED — 3D Syringe Creative Production',

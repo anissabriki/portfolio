@@ -17,7 +17,7 @@ export const fillmedWebsite: Project = {
     'At FILLMED I worked on the website’s structure and experience, and on Instagram and digital content. This case study covers both, because they were designed to work together.',
   ],
   challenge: 'How do you make one international website and one social presence work for healthcare professionals and for consumers, across markets and languages, without diluting the brand?',
-  role: ['Website restructuring', 'Information architecture', 'UX/UI improvements', 'SEO strategy', 'Social media strategy and editorial planning', 'International content coordination'],
+  role: ['Website restructuring', 'UX/UI improvements', 'SEO', 'Multilingual digital content', 'Social media management', 'Instagram editorial strategy', 'Campaign coordination', 'Analytics and conversion optimisation'],
   strategy: [
     { title: 'Website transformation', items: ['Website restructuring', 'Information architecture', 'UX/UI improvements', 'SEO strategy', 'Multilingual content', 'International market coordination', 'Product pages', 'Physician journeys', 'Consumer journeys', 'Website analytics', 'Conversion optimisation'] },
     { title: 'Social media & Instagram', items: ['Social media strategy', 'Editorial planning', 'Product storytelling', 'Campaign activation', 'Educational content', 'NCTF-related content', 'Physician-oriented communication', 'International content coordination'] },
