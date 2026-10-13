@@ -28,6 +28,14 @@
    "year": "2023",
    "type": "LinkedIn post with video",
    "status": "confirm"
+  },
+  {
+   "title": "NCTF",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-nctf-aestheticmedicine-activity-7437501360406855680-6lNK",
+   "year": "",
+   "type": "LinkedIn post",
+   "status": "confirm",
+   "img": "nctf/linkedin-7437501360406855680.jpg"
   }
  ],
  "fillmed-website": [
@@ -73,6 +81,13 @@
    "year": "2025",
    "type": "LinkedIn post with image",
    "status": "confirm"
+  },
+  {
+   "title": "Evidence-based content",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_skin-rejuvenation-dermal-remodeling-evidencebased-activity-7450128344420954112-NyZh",
+   "year": "",
+   "type": "LinkedIn post",
+   "status": "confirm"
   }
  ],
  "fillmed-academy": [
@@ -104,6 +119,14 @@
    "year": "2023",
    "type": "LinkedIn post with video",
    "status": "confirm"
+  },
+  {
+   "title": "Medical education webinar",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-medicaleducation-webinar-activity-7432001453965094913-UnEL",
+   "year": "",
+   "type": "LinkedIn post",
+   "status": "confirm",
+   "img": "fillmed/linkedin-7432001453965094913.jpg"
   }
  ],
  "medical-events": [
@@ -140,6 +163,27 @@
    "title": "FILLMED year-in-review video",
    "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedecine-regenerativeera-activity-7161320676442714113-9Aim",
    "year": "2024",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "AMWC Monaco workshop",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_amwc-monaco-2026-fillmed-workshop-activity-7442533293004046337-HbtF",
+   "year": "",
+   "type": "LinkedIn post",
+   "status": "confirm"
+  },
+  {
+   "title": "AMWC Monaco",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-amwc2026-aestheticmedicine-activity-7447955143385526273-0sKE",
+   "year": "",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "IMCAS symposium replay",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-imcas2026-amwc2026-activity-7437792159656943616-bfG0",
+   "year": "",
    "type": "LinkedIn post with video",
    "status": "confirm"
   }
