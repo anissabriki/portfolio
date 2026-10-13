@@ -23,7 +23,7 @@ const refs = ((references as Record<string, Reference[]>)[p.slug] || []);
 // LinkedIn posts are shown through LinkedIn's own embed: the content stays hosted by its publisher, nothing is copied.
 const embeds = refs.filter((r) => /activity-\d{19}/.test(r.url)).filter((r, k, all) => all.findIndex((x) => x.url === r.url) === k).map((r) => ({ ...r, id: r.url.match(/activity-(\d{19})/)![1] })).sort((a, b) => Number(!!b.img) - Number(!!a.img));
 const linkRefs = refs.filter((r) => !/activity-\d{19}/.test(r.url));
-const refLabel = { confirm: site.draft ? 'Published by the brand · my contribution to confirm' : 'Published by the brand', later: 'Later reference · not my work', own: 'My own work' };
+const refLabel = { confirm: site.draft ? 'Published by the brand · my contribution to confirm' : 'Published by the brand', later: 'Published by the brand', own: 'My own work' };
 const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand text-ink', PLANNED: 'border border-ink/40 text-ink' };
 ---
 <Base title={`${p.title}: ${p.subtitle}`} description={p.summary}>
@@ -255,18 +255,11 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
       <div class="space-y-5 text-lg md:col-span-8">{p.results.map((t) => <p class="reveal">{t}</p>)}</div>
     </section>
 
-    <section class="wrap border-t border-line py-14 md:py-20">
-      <h2 class="eyebrow">{L.attribution}</h2>
-      <div class="mt-8 grid gap-10 md:grid-cols-3">
-        {[[L.mine, p.attribution.mine], [L.brand, p.attribution.brand], [L.today, p.attribution.today]].map(([label, items], k) => (
-          <div class:list={['reveal border-t-2 pt-5', k === 0 ? 'border-burgundy' : 'border-ink/30']}>
-            <h3 class="font-serif text-2xl">{label}</h3>
-            <ul class="mt-4 space-y-3 text-[15px] text-muted">{(items as string[]).map((it) => <li>{it}</li>)}</ul>
-          </div>
-        ))}
-      </div>
-      {p.links && <p class="mt-10 flex flex-wrap gap-6 text-sm">{p.links.map((l) => <a class="link" href={l.href} rel="noopener">{l.label} ↗</a>)}</p>}
-    </section>
+    {p.links && (
+      <section class="wrap border-t border-line py-10">
+        <p class="flex flex-wrap gap-6 text-sm">{p.links.map((l) => <a class="link" href={l.href} rel="noopener">{l.label} ↗</a>)}</p>
+      </section>
+    )}
 
     <a href={url(`projects/${next.slug}/`)} class="group block border-t border-line bg-paper-2 py-16 md:py-24">
       <div class="wrap">
