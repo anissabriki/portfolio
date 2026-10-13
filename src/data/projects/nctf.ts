@@ -53,7 +53,7 @@ export const nctf: Project = {
     { title: 'NCTF product photography', note: 'Asset needed: authorised product visual.' },
     { title: 'HCP newsletter', note: 'Asset needed: screenshot of a professional newsletter from my time at FILLMED.' },
     { title: 'Consumer social content', note: 'Asset needed: NCTF-related posts from the official FILLMED Instagram, from my time at FILLMED, with links.' },
-    { title: 'NCTF campaign page, French site', note: 'Screenshot of FILLMED’s public page as it appears today.', src: 'nctf/page-nctf-fr.jpg', alt: 'FILLMED French campaign page for NCTF 135 HA', source: 'https://fr.fillmed.com/traitements-fillmed/ · FILLMED' },
+    { title: 'NCTF campaign page, French site', note: 'FILLMED’s public campaign page.', src: 'nctf/page-nctf-fr.jpg', alt: 'FILLMED French campaign page for NCTF 135 HA', source: 'https://fr.fillmed.com/traitements-fillmed/ · FILLMED' },
     { title: 'Event imagery', note: 'Asset needed: NCTF presence at a congress or training session I took part in.' },
   ],
   results: [
@@ -64,7 +64,7 @@ export const nctf: Project = {
   attribution: {
     mine: ['Digital marketing and campaign coordination for NCTF-related activity', 'CRM and email touchpoints for healthcare professionals', 'Physician engagement and digital customer journeys'],
     brand: ['The NCTF product, its positioning and its scientific claims', 'Brand-level creative platforms and international brand campaigns', 'Medical and regulatory content owned by FILLMED’s medical teams'],
-    today: ['NCTF is presented on fillmed.com under “Revitalise”, with a “Find a doctor” locator. The site and campaigns may have changed since I left.'],
+    today: ['NCTF is presented on fillmed.com under “Revitalise”, with a “Find a doctor” locator.'],
   },
   links: [{ label: 'fillmed.com', href: 'https://fillmed.com' }],
 };

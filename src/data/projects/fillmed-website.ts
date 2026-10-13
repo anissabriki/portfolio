@@ -36,7 +36,7 @@ export const fillmedWebsite: Project = {
     { name: 'LinkedIn' },
   ],
   evidence: [
-    { title: 'fillmed.com today', note: 'Screenshot of the current public homepage. The site has been redesigned since: this is not the version I worked on.', src: 'fillmed/page-home.jpg', alt: 'Current fillmed.com homepage', source: 'https://fillmed.com · FILLMED', wide: true },
+    { title: 'fillmed.com', note: 'The public homepage.', src: 'fillmed/page-home.jpg', alt: 'Current fillmed.com homepage', source: 'https://fillmed.com · FILLMED', wide: true },
     { title: 'Website as I worked on it', note: 'Asset needed: archived capture of fillmed.com from my time at FILLMED (homepage and a product page).' },
     { title: 'Website, mobile', note: 'Asset needed: mobile captures from the same period.' },
     { title: 'Information architecture', note: 'Asset needed: sitemap or navigation structure I worked on.' },
@@ -51,8 +51,8 @@ export const fillmedWebsite: Project = {
   ],
   attribution: {
     mine: ['My involvement in the website’s restructuring, architecture, UX and SEO', 'Social media strategy, editorial planning and content coordination on Instagram', 'Coordination with international markets on content'],
-    brand: ['The FILLMED brand identity and art direction', 'Global brand campaigns and their creative concepts', 'Content published by the brand outside my scope or after my departure'],
-    today: ['FILLMED has since announced a new website. That later launch is not presented here as my work.', 'fillmed.com today presents products, an E-Academy and a “Find a doctor” locator. It differs from the version I worked on.'],
+    brand: ['The FILLMED brand identity and art direction', 'Global brand campaigns and their creative concepts'],
+    today: ['fillmed.com presents the product ranges, the E-Academy and a “Find a doctor” locator.'],
   },
   links: [{ label: 'fillmed.com', href: 'https://fillmed.com' }],
 };

@@ -38,7 +38,7 @@ export const fillmedAcademy: Project = {
   ],
   evidence: [
     { title: 'CRM and learning journey', note: 'Diagram of the journey from registration to follow-up. Rebuilt for this portfolio.', wide: true },
-    { title: 'E-Academy sign-in page', note: 'Screenshot of the public sign-in page as it appears today. The interface has been updated since.', src: 'fillmed/page-eacademy.jpg', alt: 'FILLMED E-Academy sign-in page', source: 'https://fillmed.com/login-register/ · FILLMED' },
+    { title: 'E-Academy sign-in page', note: 'The public sign-in page.', src: 'fillmed/page-eacademy.jpg', alt: 'FILLMED E-Academy sign-in page', source: 'https://fillmed.com/login-register/ · FILLMED' },
     { title: 'E-Academy interface', note: 'Asset needed: capture of the platform as it was when I worked on it (course catalogue, a course page).' },
     { title: 'Email templates', note: 'Asset needed: a newsletter, a training invitation and a follow-up from my time at FILLMED.' },
     { title: 'Automation workflow', note: 'Asset needed: workflow screenshots. Each automation is listed as implemented only once confirmed from my project files.' },
@@ -51,8 +51,8 @@ export const fillmedAcademy: Project = {
   ],
   attribution: {
     mine: ['Restructuring of the learning platform’s architecture and user journeys', 'CRM strategy and segmentation of the professional database', 'Email marketing and automation around training'],
-    brand: ['The medical and scientific training content itself', 'Trainers, KOLs and the medical education programme', 'The E-Academy as a FILLMED product, before and after my involvement'],
-    today: ['The E-Academy is accessible from fillmed.com. Its structure and content may have evolved since my departure.'],
+    brand: ['The medical and scientific training content itself', 'Trainers, KOLs and the medical education programme', 'The E-Academy as a FILLMED product'],
+    today: ['The E-Academy is accessible from fillmed.com.'],
   },
   links: [{ label: 'fillmed.com', href: 'https://fillmed.com' }],
 };
