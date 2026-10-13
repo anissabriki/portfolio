@@ -23,6 +23,16 @@ export const kinassayLab: Project = {
     { title: 'Website', items: ['Website structure', 'UX/UI', 'Responsive design', 'SEO foundations', 'Conversion-focused pages', 'Calls to action', 'Contact and booking journeys'] },
     { title: 'Kinassay Scan', items: ['Questionnaire design', 'Scoring methodology', 'User experience', 'Results by email', 'Lead qualification'] },
   ],
+  ecosystem: {
+    eyebrow: 'From idea to a working business',
+    title: 'Four building blocks',
+    columns: [
+      { tag: '01', title: 'Brand & Website', text: 'Positioning, identity, UX/UI and development.' },
+      { tag: '02', title: 'Kinassay Scan', text: 'An assessment across six dimensions, scored from the answers.' },
+      { tag: '03', title: 'Lead Generation', text: 'Questionnaire, qualification and booking of a first meeting.' },
+      { tag: '04', title: 'CRM & Automation', text: 'Lead storage and follow-up. See below for what is live and what is planned.' },
+    ],
+  },
   journey: { title: 'End to end, built by one person', steps: ['Brand strategy', 'Website development', 'Kinassay Scan', 'Scoring', 'CRM', 'Email automation', 'Lead generation'] },
   execution: [
     'The positioning came first: a studio dedicated to aesthetic medicine, built around three levers (be found, be trusted, be chosen) and one primary action, booking a first meeting.',

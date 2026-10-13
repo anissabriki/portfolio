@@ -23,6 +23,17 @@ export const nctf: Project = {
     { title: 'B2C · Consumers', items: ['Consumer awareness', 'Educational content', 'Social media campaigns', 'Product storytelling', 'Digital acquisition', 'Patient education'] },
     { title: 'B2C2B · From consumer to clinic', items: ['Consumer-to-clinic journey', 'Find a Doctor', 'Practitioner discovery', 'Appointment-oriented conversion', 'CRM follow-up', 'Connecting patient demand with physician networks'] },
   ],
+  ecosystem: {
+    eyebrow: 'Integrated marketing campaign',
+    title: 'NCTF 135 HA',
+    columns: [
+      { tag: 'B2B', title: 'Doctors & clinics', text: 'Education, product communication, newsletters, webinars and KOL content.' },
+      { tag: 'B2C', title: 'Consumers', text: 'Awareness, educational content, social campaigns and product storytelling.' },
+      { tag: 'B2C2B', title: 'Drive-to-clinic', text: 'Find a Doctor, practitioner discovery and appointment-oriented conversion.' },
+    ],
+    base: ['CRM', 'Content', 'Education', 'Conversion'],
+    caption: 'One coherent journey across channels and audiences.',
+  },
   journey: { title: 'The B2C2B bridge', steps: ['Consumer awareness', 'Product education', 'Find a Doctor', 'Practitioner discovery', 'Consultation', 'CRM follow-up'] },
   execution: [
     'I treated the three audiences as one connected system rather than three separate plans: what a physician learns in a training session and what a patient reads on social media have to tell the same product story.',
