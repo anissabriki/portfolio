@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
+import { experience, interests } from '../data/profile';
+import { ui } from '../i18n/en';
+import { url } from '../lib';
+---
+<Base title="About" description={`About ${site.name}: digital strategy, growth and customer experience across technology, luxury and medical aesthetics.`}>
+  <section class="wrap grid gap-12 pb-16 pt-14 md:grid-cols-12 md:pt-24">
+    <div class="md:col-span-7">
+      <p class="eyebrow">About</p>
+      <h1 class="display mt-6 text-[clamp(3rem,7.5vw,7rem)]">Performance, perception, <em class="text-burgundy">trust.</em></h1>
+      <div class="mt-10 space-y-5 text-lg md:text-xl">
+        <p>I am {site.name}, a digital strategist working across growth, CRM and customer experience.</p>
+        <p>My path runs through three worlds that rarely sit on the same CV. At Google I learned performance: how the right strategy reaches the right audience. At GroupM, working on luxury brands, I learned perception: people do not just click, they compare and decide whom to trust. At FILLMED, in medical aesthetics, I learned trust itself: how physicians and patients choose, and what a brand owes them.</p>
+        <p>Kinassay Lab, the studio I founded, is where the three meet, and where I build with AI-assisted development what I used to only specify.</p>
+      </div>
+      <p class="mt-10 flex flex-wrap gap-4">
+        <a class="btn btn-solid" href={url('projects/')}>{ui.cta.work}</a>
+        {site.cvFile && <a class="btn btn-ghost" href={url(site.cvFile)} download>{ui.cta.cv}</a>}
+      </p>
+    </div>
+    {site.portrait && (
+      <div class="md:col-span-5">
+        <img src={url(`images/${site.portrait}`)} alt={`Portrait of ${site.name}`} class="block w-full" />
+      </div>
+    )}
+  </section>
+  <section class="wrap border-t border-line py-16">
+    <p class="eyebrow">Experience</p>
+    <ol class="mt-8 grid gap-x-10 md:grid-cols-2">
+      {experience.map((x) => (
+        <li class="border-b border-line py-6">
+          <h2 class="font-serif text-4xl">{x.company}</h2>
+          <p class="mt-1 font-semibold">{x.role}{x.period && <span class="font-normal text-muted"> · {x.period}</span>}</p>
+          {x.text && <p class="mt-2 text-muted">{x.text}</p>}
+          {site.draft && x.confirm && <p class="mt-2 text-sm italic text-burgundy">{x.confirm}</p>}
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="wrap border-t border-line py-16">
+    <p class="eyebrow">Beyond work</p>
+    <ul class="mt-8 grid gap-x-10 md:grid-cols-2">
+      {interests.map((x) => (
+        <li class="border-b border-line py-6">
+          <h2 class="font-serif text-4xl">{x.title}</h2>
+          <p class="mt-2 text-muted">{x.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

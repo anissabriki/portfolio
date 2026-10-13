@@ -1,0 +1,224 @@
+---
+// Reusable case study template: overview, challenge, role, strategy, execution, tools, evidence, results, attribution.
+import type { Project } from '../data/types';
+import Base from '../layouts/Base.astro';
+import Asset from './Asset.astro';
+import Journey from './Journey.astro';
+import { ui } from '../i18n/en';
+import { site } from '../site.config';
+import { url } from '../lib';
+import { projects } from '../data/projects';
+import references from '../data/references.json';
+import type { Reference } from '../data/types';
+
+interface Props { project: Project }
+const { project: p } = Astro.props;
+const L = ui.labels;
+const i = projects.findIndex((x) => x.slug === p.slug);
+const next = projects[(i + 1) % projects.length];
+const evidence = p.evidence.filter((e) => e.src);
+const feature = p.feature && (p.feature.image || p.feature.video) ? p.feature : undefined;
+const tools = p.tools.filter((t) => site.draft || !t.confirm);
+const refs = ((references as Record<string, Reference[]>)[p.slug] || []);
+// LinkedIn posts are shown through LinkedIn's own embed: the content stays hosted by its publisher, nothing is copied.
+const embeds = refs.filter((r) => /activity-\d{19}/.test(r.url)).filter((r, k, all) => all.findIndex((x) => x.url === r.url) === k).map((r) => ({ ...r, id: r.url.match(/activity-(\d{19})/)![1] })).sort((a, b) => Number(!!b.img) - Number(!!a.img));
+const linkRefs = refs.filter((r) => !/activity-\d{19}/.test(r.url));
+const refLabel = { confirm: site.draft ? 'Published by the brand · my contribution to confirm' : 'Published by the brand', later: 'Later reference · not my work', own: 'My own work' };
+const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand text-ink', PLANNED: 'border border-ink/40 text-ink' };
+---
+<Base title={`${p.title}: ${p.subtitle}`} description={p.summary}>
+  <article>
+    <header class="wrap pb-14 pt-14 md:pb-20 md:pt-24">
+      <p class="eyebrow"><a class="hover:text-burgundy" href={url('projects/')}>{ui.nav.work}</a> · {String(i + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</p>
+      <h1 class="display mt-6 text-[clamp(3.2rem,9vw,8.5rem)]">{p.title}</h1>
+      <p class="mt-4 max-w-4xl font-serif text-[clamp(1.6rem,3.2vw,3rem)] italic leading-tight text-burgundy">{p.subtitle}</p>
+      <dl class="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-3">
+        <div><dt class="eyebrow">Company</dt><dd class="mt-2 text-lg font-semibold">{p.period}</dd></div>
+        <div><dt class="eyebrow">{L.category}</dt><dd class="mt-2">{p.category.join(' · ')}</dd></div>
+        <div><dt class="eyebrow">{L.role}</dt><dd class="mt-2">{p.role.join(' · ')}</dd></div>
+      </dl>
+    </header>
+
+    <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.overview}</h2>
+      <div class="space-y-5 text-lg md:col-span-8 md:text-xl">{p.overview.map((t) => <p class="reveal">{t}</p>)}</div>
+    </section>
+
+    <section class="bg-ink py-16 text-paper md:py-24">
+      <div class="wrap grid gap-10 md:grid-cols-12">
+        <h2 class="eyebrow !text-paper/60 md:col-span-3">{L.challenge}</h2>
+        <p class="reveal display text-[clamp(1.9rem,4vw,3.6rem)] md:col-span-9">{p.challenge}</p>
+      </div>
+    </section>
+
+    <section class="wrap grid gap-10 py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.strategy}</h2>
+      <div class="md:col-span-9">
+        <div class:list={['grid gap-x-10 gap-y-12', p.strategy.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2']}>
+          {p.strategy.map((g) => (
+            <div class="reveal border-t border-ink pt-5">
+              <h3 class="font-serif text-3xl leading-tight">{g.title}</h3>
+              <ul class="mt-5 space-y-2 text-[15px]">{g.items.map((it) => <li class="border-b border-line pb-2">{it}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+        {p.journey && <div class="mt-14"><Journey title={p.journey.title} steps={p.journey.steps} /></div>}
+      </div>
+    </section>
+
+    <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.execution}</h2>
+      <div class="space-y-5 text-lg md:col-span-8">{p.execution.map((t) => <p class="reveal">{t}</p>)}</div>
+    </section>
+
+    {feature && (
+      <section class="bg-bordeaux py-16 text-paper md:py-24" aria-labelledby="feature-h">
+        <div class="wrap">
+          <p class="eyebrow !text-rose">{p.feature.category.join(' · ')}</p>
+          <h2 id="feature-h" class="display mt-5 max-w-[18ch] text-[clamp(2.4rem,6vw,5.6rem)]">{p.feature.title}</h2>
+          <div class="reveal mt-12">
+            {p.feature.video ? (
+              <video controls preload="metadata" playsinline poster={p.feature.image ? url(`images/${p.feature.image}`) : undefined} class="block w-full bg-black">
+                <source src={url(p.feature.video)} type="video/mp4" />
+              </video>
+            ) : p.feature.image ? (
+              <img src={url(`images/${p.feature.image}`)} alt={p.feature.title} loading="lazy" class="block h-auto w-full" />
+            ) : (
+              <div class="flex aspect-[16/8] flex-col justify-between border border-dashed border-rose/60 p-7 md:p-10" role="img" aria-label={`Placeholder: ${p.feature.placeholder}`}>
+                <span class="eyebrow !text-rose">Asset placeholder</span>
+                <span class="display max-w-[16ch] text-[clamp(2rem,5vw,4.4rem)] text-rose">{p.feature.placeholder}</span>
+                <span class="max-w-xl text-sm text-paper/70">{site.draft ? 'The original 3D visual or animation has not been located in public archives. This space is reserved for it: no substitute image is used.' : 'Visual to be added.'}</span>
+              </div>
+            )}
+            {p.feature.credit && <p class="mt-3 text-sm text-paper/60">{p.feature.credit}</p>}
+          </div>
+          {p.feature.gallery && p.feature.gallery.length > 0 && (
+            <div class="mt-8 grid gap-8 md:grid-cols-3">
+              {p.feature.gallery.map((g) => <img src={url(`images/${g}`)} alt="" loading="lazy" class="reveal block h-auto w-full" />)}
+            </div>
+          )}
+          <dl class="mt-14 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+            {p.feature.blocks.map((b, k) => (
+              <div class="reveal border-t border-rose/50 pt-5">
+                <dt class="font-serif text-2xl italic text-rose">{String(k + 1).padStart(2, '0')} · {b.label}</dt>
+                <dd class="mt-3 text-lg leading-snug">{b.text}</dd>
+                {site.draft && b.confirm && <dd class="mt-2 text-sm italic text-paper/60">Exact responsibilities to confirm.</dd>}
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    )}
+
+    {p.status && (
+      <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+        <h2 class="eyebrow md:col-span-3">What is live today</h2>
+        <ul class="md:col-span-9">
+          {p.status.map((s) => (
+            <li class="reveal grid gap-3 border-b border-line py-5 md:grid-cols-[1fr_auto_2fr] md:items-baseline md:gap-8">
+              <span class="text-lg font-semibold">{s.feature}</span>
+              <span class:list={['w-fit rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]', statusTone[s.status]]}>{s.status}</span>
+              <span class="text-muted">{s.detail}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {tools.length > 0 && (
+    <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.tools}</h2>
+      <ul class="flex flex-wrap gap-3 md:col-span-9">
+        {tools.map((t) => (
+          <li class:list={['rounded-full border px-4 py-2 text-sm', t.confirm ? 'border-dashed border-ink/40 text-muted' : 'border-ink']}>
+            {t.name}{t.confirm && <span class="ml-2 text-[11px] uppercase tracking-[0.12em]">{L.toConfirm}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+    )}
+
+    {evidence.length > 0 && (
+    <section class="bg-paper-2 py-14 md:py-20">
+      <div class="wrap">
+        <h2 class="eyebrow">{L.evidence}</h2>
+        <div class="mt-8 grid gap-x-8 gap-y-12 md:grid-cols-2">{evidence.map((e) => <Asset item={e} />)}</div>
+      </div>
+    </section>
+    )}
+
+    {embeds.length > 0 && (
+      <section class="border-t border-line py-14 md:py-20">
+        <div class="wrap">
+          <h2 class="eyebrow">From the brand’s public channels</h2>
+          <p class="mt-3 max-w-2xl text-sm text-muted">Publications by FILLMED on LinkedIn, each linked to its source. {site.draft ? 'My contribution to each one is still to be confirmed.' : ''}</p>
+          <div class="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {embeds.map((e) => (
+              <figure class="reveal">
+                {e.img ? (
+                  <a href={e.url} rel="noopener" class="block overflow-hidden border border-line bg-paper-2">
+                    <img src={url(`images/${e.img}`)} alt={`Preview of the publication: ${e.title}`} loading="lazy" decoding="async" class="block h-auto w-full transition-transform duration-500 hover:scale-[1.02]" />
+                  </a>
+                ) : (
+                  <div class="overflow-hidden border border-line bg-white">
+                    <iframe src={`https://www.linkedin.com/embed/feed/update/urn:li:activity:${e.id}`} title={`LinkedIn post: ${e.title}`} loading="lazy" height="620" class="block w-full" style="border:0" allowfullscreen></iframe>
+                  </div>
+                )}
+                <figcaption class="mt-3 text-sm">
+                  <a class="link font-semibold" href={e.url} rel="noopener">{e.title} ↗</a>
+                  <span class="block text-muted">{e.img ? 'Preview image · FILLMED on LinkedIn · ' : ''}{refLabel[e.status]}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {linkRefs.length > 0 && (
+      <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
+        <div class="md:col-span-3">
+          <h2 class="eyebrow">Public references</h2>
+          <p class="mt-3 text-sm text-muted">Links to the original publications. They are not reproduced here: the content belongs to its publisher.</p>
+        </div>
+        <ul class="md:col-span-9">
+          {linkRefs.map((r) => (
+            <li class="reveal grid gap-2 border-b border-line py-5 md:grid-cols-[1fr_auto] md:items-baseline md:gap-8">
+              <span>
+                <a class="link text-lg font-semibold" href={r.url} rel="noopener">{r.title} ↗</a>
+                <span class="mt-1 block text-sm text-muted">{r.type}</span>
+              </span>
+              <span class:list={['w-fit rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em]', r.status === 'later' ? 'border border-ink/40' : 'bg-paper-2']}>{refLabel[r.status]}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="wrap grid gap-10 py-14 md:grid-cols-12 md:py-20">
+      <h2 class="eyebrow md:col-span-3">{L.results}</h2>
+      <div class="space-y-5 text-lg md:col-span-8">{p.results.map((t) => <p class="reveal">{t}</p>)}</div>
+    </section>
+
+    <section class="wrap border-t border-line py-14 md:py-20">
+      <h2 class="eyebrow">{L.attribution}</h2>
+      <div class="mt-8 grid gap-10 md:grid-cols-3">
+        {[[L.mine, p.attribution.mine], [L.brand, p.attribution.brand], [L.today, p.attribution.today]].map(([label, items], k) => (
+          <div class:list={['reveal border-t-2 pt-5', k === 0 ? 'border-burgundy' : 'border-ink/30']}>
+            <h3 class="font-serif text-2xl">{label}</h3>
+            <ul class="mt-4 space-y-3 text-[15px] text-muted">{(items as string[]).map((it) => <li>{it}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+      {p.links && <p class="mt-10 flex flex-wrap gap-6 text-sm">{p.links.map((l) => <a class="link" href={l.href} rel="noopener">{l.label} ↗</a>)}</p>}
+    </section>
+
+    <a href={url(`projects/${next.slug}/`)} class="group block border-t border-line bg-paper-2 py-16 md:py-24">
+      <div class="wrap">
+        <p class="eyebrow">{ui.cta.next}</p>
+        <p class="display mt-4 text-[clamp(2.6rem,7vw,6.5rem)] transition-colors group-hover:text-burgundy">{next.title} →</p>
+        <p class="mt-2 text-muted">{next.subtitle}</p>
+      </div>
+    </a>
+  </article>
+</Base>

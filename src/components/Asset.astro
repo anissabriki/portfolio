@@ -1,0 +1,26 @@
+---
+// A real image when `src` is set, otherwise a clearly labelled placeholder (never a substitute visual).
+import type { Evidence } from '../data/types';
+import { url } from '../lib';
+import { site } from '../site.config';
+interface Props { item: Evidence }
+const { item } = Astro.props;
+---
+<figure class:list={['reveal', item.wide ? 'md:col-span-2' : '']}>
+  {item.src ? (
+    <div class="overflow-hidden border border-line bg-paper-2">
+      <img src={url(`images/${item.src}`)} alt={item.alt || item.title} loading="lazy" decoding="async" class="block h-auto w-full" />
+    </div>
+  ) : (
+    <div class:list={['flex flex-col justify-between border border-dashed border-ink/35 bg-paper-2 p-6', item.wide ? 'aspect-[16/7]' : 'aspect-[4/3]']} role="img" aria-label={`Placeholder: ${item.title}`}>
+      <span class="eyebrow">Asset placeholder</span>
+      <span class="font-serif text-3xl leading-tight md:text-4xl">{item.title}</span>
+      <span class="text-sm text-muted">{site.draft ? item.note : 'Visual to be added.'}</span>
+    </div>
+  )}
+  <figcaption class="mt-3 text-sm">
+    <span class="font-semibold">{item.title}.</span>
+    {item.src && <span class="text-muted"> {item.note}</span>}
+    {item.source && <span class="block text-muted">Source: {item.source}</span>}
+  </figcaption>
+</figure>

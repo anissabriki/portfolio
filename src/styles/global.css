@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource-variable/inter";
+
+/* Design tokens: warm off-white, deep charcoal, rose, burgundy and bordeaux. */
+@theme {
+  --color-paper: #f8f3f1;
+  --color-paper-2: #f3e6e6;
+  --color-sand: #ead8d6;
+  --color-ink: #1a1a1c;
+  --color-muted: #66625d;
+  --color-line: #dfcfcf;
+  --color-burgundy: #7a1f3d;
+  --color-bordeaux: #3f0f20;
+  --color-rose: #e9c3cc;
+  --color-rose-pale: #f4dfe3;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+::selection { background: var(--color-burgundy); color: #fff; }
+:focus-visible { outline: 2px solid var(--color-burgundy); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: clamp(20px, 4.5vw, 64px); }
+.display { font-family: var(--font-serif); font-weight: 400; letter-spacing: -0.02em; line-height: 0.98; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-muted); }
+.rule { border-top: 1px solid var(--color-line); }
+.link { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.link:hover { color: var(--color-burgundy); }
+
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 15px 26px; border-radius: 999px; font-weight: 600; font-size: 15px; border: 1px solid var(--color-ink); transition: background-color .25s, color .25s, border-color .25s, transform .25s; }
+.btn::after { content: "→"; transition: transform .25s; }
+.btn-solid { background: var(--color-ink); color: var(--color-paper); }
+.btn-ghost { background: transparent; color: var(--color-ink); }
+@media (hover: hover) {
+  .btn-solid:hover { background: var(--color-burgundy); border-color: var(--color-burgundy); }
+  .btn-ghost:hover { background: var(--color-ink); color: var(--color-paper); }
+  .btn:hover::after { transform: translateX(4px); }
+}
+
+/* Reveal on scroll: content is visible without JavaScript and with reduced motion. */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn, .btn::after { transition: none; }
+}

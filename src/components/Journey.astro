@@ -1,0 +1,15 @@
+---
+interface Props { title: string; steps: string[]; dark?: boolean }
+const { title, steps, dark = false } = Astro.props;
+---
+<div class:list={['reveal border p-6 md:p-10', dark ? 'border-white/20 bg-bordeaux text-paper' : 'border-line bg-paper-2']}>
+  <p class:list={['eyebrow', dark && '!text-paper/70']}>{title}</p>
+  <ol class="mt-8 grid gap-0 md:grid-flow-col md:auto-cols-fr">
+    {steps.map((s, i) => (
+      <li class:list={['relative border-t py-5 md:border-l md:border-t-0 md:px-5 md:py-2', dark ? 'border-white/25' : 'border-ink/25', i === 0 && 'md:border-l-0 md:pl-0']}>
+        <span class:list={['font-serif text-2xl italic', dark ? 'text-paper/70' : 'text-burgundy']}>{String(i + 1).padStart(2, '0')}</span>
+        <span class="mt-2 block text-[15px] font-semibold leading-snug">{s}</span>
+      </li>
+    ))}
+  </ol>
+</div>

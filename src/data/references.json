@@ -1,0 +1,156 @@
+{
+ "nctf": [
+  {
+   "title": "NCTF campaign landing page (FR)",
+   "url": "https://fr.fillmed.com/traitements-fillmed/",
+   "year": "2023",
+   "type": "Web page",
+   "status": "confirm"
+  },
+  {
+   "title": "B2B campaign",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-nctf135-ha-activity-7117426757195972609-6kUd",
+   "year": "2023",
+   "type": "LinkedIn post with image",
+   "status": "confirm",
+   "img": "nctf/linkedin-7117426757195972609.jpg"
+  },
+  {
+   "title": "NCTF product campaign",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedecine-yourclinicpotential-activity-7133417047241166848-5Rec",
+   "year": "2023",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "NCTF educational video",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-nctf-activity-7137765170147135488-0qXT",
+   "year": "2023",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  }
+ ],
+ "fillmed-website": [
+  {
+   "title": "Official website",
+   "url": "https://fillmed.com/",
+   "year": "",
+   "type": "Web page",
+   "status": "confirm"
+  },
+  {
+   "title": "French website",
+   "url": "https://fillmed.com/fr/",
+   "year": "2025",
+   "type": "Web page",
+   "status": "later"
+  },
+  {
+   "title": "Official Instagram",
+   "url": "https://www.instagram.com/fillmed_laboratoires/",
+   "year": "",
+   "type": "Instagram account",
+   "status": "confirm"
+  },
+  {
+   "title": "Official social media directory",
+   "url": "https://linktr.ee/laboratoiresfillmed",
+   "year": "",
+   "type": "Link directory",
+   "status": "confirm"
+  },
+  {
+   "title": "New Year campaign",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-newyear-activity-7147911948276232192-ilhv",
+   "year": "2024",
+   "type": "LinkedIn post with image",
+   "status": "confirm",
+   "img": "fillmed/linkedin-7147911948276232192.jpg"
+  },
+  {
+   "title": "New website announcement",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-laboratories-aesthetic-medicine-activity-7341774356471050240-8Nqu",
+   "year": "2025",
+   "type": "LinkedIn post with image",
+   "status": "later"
+  }
+ ],
+ "fillmed-academy": [
+  {
+   "title": "E-Academy platform",
+   "url": "https://fillmed.com/login-register/",
+   "year": "",
+   "type": "Web page",
+   "status": "confirm"
+  },
+  {
+   "title": "Interface update",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-activity-7244738705301606400-4HL4",
+   "year": "2024",
+   "type": "LinkedIn post with image",
+   "status": "confirm",
+   "img": "fillmed/linkedin-7244738705301606400.jpg"
+  },
+  {
+   "title": "IMCAS symposium replay on the E-Academy",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_aestheticmedicine-eacademy-training-activity-7199433009547104257-mvFA",
+   "year": "2024",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "NCTF injection training",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-nctf-activity-7137765170147135488-0qXT",
+   "year": "2023",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  }
+ ],
+ "medical-events": [
+  {
+   "title": "IMCAS World",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-imcas2024-activity-7154156865252126721-vF5D",
+   "year": "2024",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "IMCAS NCTF symposium replay",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-imcasworld2024-activity-7213852014617788416-M7Uj",
+   "year": "2024",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "Dubai Derma",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-filler-dubaiderma-activity-7077223826287128576-Xe8q",
+   "year": "2023",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  },
+  {
+   "title": "COSMEDICON Sydney",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedicine-artfiller-activity-7041822496907489280-hgv6",
+   "year": "2023",
+   "type": "LinkedIn post with image",
+   "status": "confirm",
+   "img": "events/linkedin-7041822496907489280.jpg"
+  },
+  {
+   "title": "FILLMED year-in-review video",
+   "url": "https://www.linkedin.com/posts/laboratoires-fillmed_fillmed-aestheticmedecine-regenerativeera-activity-7161320676442714113-9Aim",
+   "year": "2024",
+   "type": "LinkedIn post with video",
+   "status": "confirm"
+  }
+ ],
+ "groupm": [
+  {
+   "title": "Historical company reference",
+   "url": "https://www.linkedin.com/company/groupmworldwide/",
+   "year": "",
+   "type": "LinkedIn company page",
+   "status": "confirm"
+  }
+ ]
+}

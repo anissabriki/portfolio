@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+import { expertise, experience } from '../data/profile';
+import { site } from '../site.config';
+import { ui } from '../i18n/en';
+import { url } from '../lib';
+---
+<Base>
+  <section class="wrap pb-12 pt-10 md:pb-16 md:pt-14">
+    <p class="eyebrow">{site.role}</p>
+    <h1 class="display mt-5 max-w-[19ch] text-[clamp(2.6rem,7vw,6.4rem)]">I turn ideas into digital experiences that <em class="text-burgundy">grow businesses.</em></h1>
+    <div class="mt-8 grid gap-8 md:grid-cols-12">
+      <p class="text-lg md:col-span-6 md:text-xl">From digital strategy and CRM to international campaigns, medical events and AI-powered solutions. I connect brands, professionals and customers through meaningful digital experiences.</p>
+      <div class="flex flex-wrap items-start gap-4 md:col-span-6 md:justify-end">
+        <a class="btn btn-solid" href="#work">{ui.cta.work}</a>
+        <a class="btn btn-ghost" href={url('contact/')}>{ui.cta.contact}</a>
+      </div>
+    </div>
+    <p class="mt-10 flex flex-wrap gap-x-10 gap-y-3 border-t border-line pt-6 text-[13px] font-semibold uppercase tracking-[0.16em] text-muted">
+      <span>Google</span><span>GroupM</span><span>FILLMED</span><span>Kinassay Lab</span>
+    </p>
+  </section>
+
+  <section id="work" class="scroll-mt-20 border-t border-line py-14 md:py-20">
+    <div class="wrap">
+      <div class="flex items-end justify-between gap-6">
+        <h2 class="display text-[clamp(2.6rem,6vw,5.5rem)]">Selected work</h2>
+        <a class="link hidden text-sm font-semibold md:block" href={url('projects/')}>{ui.cta.all} →</a>
+      </div>
+      <div class="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-2">
+        {projects.map((p, i) => <ProjectCard project={p} index={i} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" class="scroll-mt-20 bg-ink py-16 text-paper md:py-24">
+    <div class="wrap">
+      <p class="eyebrow !text-paper/60">Expertise</p>
+      <h2 class="display mt-5 max-w-[18ch] text-[clamp(2.4rem,5.5vw,5rem)]">Strategy that I can also <em class="text-[#f0b6c3]">build, launch and run.</em></h2>
+      <ol class="mt-14 grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
+        {expertise.map((e, i) => (
+          <li class="reveal border-t border-white/25 py-7">
+            <span class="font-serif text-2xl italic text-[#f0b6c3]">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="mt-3 font-serif text-3xl leading-tight">{e.title}</h3>
+            <p class="mt-3 text-[15px] text-paper/75">{e.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap py-16 md:py-24">
+    <p class="eyebrow">Professional experience</p>
+    <ol class="mt-10">
+      {experience.map((x) => (
+        <li class="reveal grid gap-4 border-t border-line py-8 md:grid-cols-12 md:gap-8">
+          <div class="md:col-span-4">
+            <h3 class="display text-5xl md:text-6xl">{x.company}</h3>
+            {x.period && <p class="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-muted">{x.period}</p>}
+          </div>
+          <div class="md:col-span-8">
+            <p class="text-lg font-semibold">{x.role}</p>
+            {x.text && <p class="mt-2 max-w-2xl text-muted">{x.text}</p>}
+            {site.draft && x.confirm && <p class="mt-2 text-sm italic text-burgundy">{x.confirm}</p>}
+            <p class="mt-4 flex flex-wrap gap-2">{x.tags.map((t) => <span class="rounded-full border border-line px-3 py-1 text-[12px]">{t}</span>)}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="border-t border-line bg-paper-2 py-20 md:py-28">
+    <div class="wrap text-center">
+      <h2 class="display mx-auto max-w-[16ch] text-[clamp(2.6rem,7vw,6.5rem)]">Let’s build what <em class="text-burgundy">comes next.</em></h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg text-muted">Open to international roles in digital marketing, customer experience and healthcare or medical aesthetics marketing.</p>
+      <p class="mt-10 flex flex-wrap justify-center gap-4">
+        <a class="btn btn-solid" href={url('contact/')}>{ui.cta.contact}</a>
+        {site.cvFile && <a class="btn btn-ghost" href={url(site.cvFile)} download>{ui.cta.cv}</a>}
+      </p>
+    </div>
+  </section>
+</Base>
