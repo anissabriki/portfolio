@@ -54,8 +54,8 @@ export const medicalEvents: Project = {
     { title: 'AMWC, Monaco', note: 'Asset needed: photography from the edition(s) I took part in, with year and my contribution.' },
     { title: 'Speakers and KOL sessions', note: 'Asset needed: public images of scientific sessions. No private contact details or confidential relationships.' },
     { title: 'Event invitation', note: 'Asset needed: an email invitation or registration page from my time at FILLMED.' },
-    { title: 'Dubai Derma', note: 'FILLMED published a symposium replay from Dubai Derma. Asset and my contribution to confirm.' },
-    { title: 'COSMEDICON, Sydney', note: 'FILLMED announced its ART FILLER launch in Australia at COSMEDICON. Asset and my contribution to confirm.' },
+    { title: 'Dubai Derma', note: 'FILLMED published a symposium replay from Dubai Derma.' },
+    { title: 'COSMEDICON, Sydney', note: 'FILLMED announced its ART FILLER launch in Australia at COSMEDICON.' },
     { title: 'Other events and trainings', note: 'To be listed once confirmed: name, location, year and my contribution.' },
   ],
   results: [

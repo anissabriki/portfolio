@@ -42,7 +42,7 @@ export const nctf: Project = {
     { title: 'NCTF product photography', note: 'Asset needed: authorised product visual.' },
     { title: 'HCP newsletter', note: 'Asset needed: screenshot of a professional newsletter from my time at FILLMED.' },
     { title: 'Consumer social content', note: 'Asset needed: NCTF-related posts from the official FILLMED Instagram, from my time at FILLMED, with links.' },
-    { title: 'NCTF campaign page, French site', note: 'Screenshot of FILLMED’s public page as it appears today. My contribution to this page is to confirm.', src: 'nctf/page-nctf-fr.jpg', alt: 'FILLMED French campaign page for NCTF 135 HA', source: 'https://fr.fillmed.com/traitements-fillmed/ · FILLMED' },
+    { title: 'NCTF campaign page, French site', note: 'Screenshot of FILLMED’s public page as it appears today.', src: 'nctf/page-nctf-fr.jpg', alt: 'FILLMED French campaign page for NCTF 135 HA', source: 'https://fr.fillmed.com/traitements-fillmed/ · FILLMED' },
     { title: 'Event imagery', note: 'Asset needed: NCTF presence at a congress or training session I took part in.' },
   ],
   results: [
