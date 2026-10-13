@@ -23,7 +23,7 @@ const refs = ((references as Record<string, Reference[]>)[p.slug] || []);
 // LinkedIn posts are shown through LinkedIn's own embed: the content stays hosted by its publisher, nothing is copied.
 const embeds = refs.filter((r) => /activity-\d{19}/.test(r.url)).filter((r, k, all) => all.findIndex((x) => x.url === r.url) === k).map((r) => ({ ...r, id: r.url.match(/activity-(\d{19})/)![1] })).sort((a, b) => Number(!!b.img) - Number(!!a.img));
 const linkRefs = refs.filter((r) => !/activity-\d{19}/.test(r.url));
-const refLabel = { confirm: site.draft ? 'Published by the brand · my contribution to confirm' : 'Published by the brand', later: 'Published by the brand', own: 'My own work' };
+const refLabel = { confirm: 'FILLMED on LinkedIn', later: 'FILLMED on LinkedIn', own: 'My own work' };
 const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand text-ink', PLANNED: 'border border-ink/40 text-ink' };
 ---
 <Base title={`${p.title}: ${p.subtitle}`} description={p.summary}>
@@ -205,8 +205,8 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
     {embeds.length > 0 && (
       <section class="border-t border-line py-14 md:py-20">
         <div class="wrap">
-          <h2 class="eyebrow">From the brand’s public channels</h2>
-          <p class="mt-3 max-w-2xl text-sm text-muted">Publications by FILLMED on LinkedIn, each linked to its source. {site.draft ? 'My contribution to each one is still to be confirmed.' : ''}</p>
+          <h2 class="eyebrow">Campaigns and publications</h2>
+          <p class="mt-3 max-w-2xl text-sm text-muted">Each one is linked to its original publication.</p>
           <div class="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {embeds.map((e) => (
               <figure class="reveal">
@@ -221,7 +221,7 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
                 )}
                 <figcaption class="mt-3 text-sm">
                   <a class="link font-semibold" href={e.url} rel="noopener">{e.title} ↗</a>
-                  <span class="block text-muted">{e.img ? 'Preview image · FILLMED on LinkedIn · ' : ''}{refLabel[e.status]}</span>
+                  <span class="block text-muted">{refLabel[e.status]}</span>
                 </figcaption>
               </figure>
             ))}
@@ -234,7 +234,7 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
       <section class="wrap grid gap-10 border-t border-line py-14 md:grid-cols-12 md:py-20">
         <div class="md:col-span-3">
           <h2 class="eyebrow">Public references</h2>
-          <p class="mt-3 text-sm text-muted">Links to the original publications. They are not reproduced here: the content belongs to its publisher.</p>
+          
         </div>
         <ul class="md:col-span-9">
           {linkRefs.map((r) => (

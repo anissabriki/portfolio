@@ -57,7 +57,7 @@ export const nctf: Project = {
     { title: 'Event imagery', note: 'Asset needed: NCTF presence at a congress or training session I took part in.' },
   ],
   results: [
-    'Results are not published here: campaign figures belong to FILLMED and I do not share them without authorisation.',
+    
     'What the work was built to achieve: one coherent product story across professional education and consumer communication, and a shorter path from patient interest to a qualified practitioner.',
     'What I took from it: in healthcare, the consumer campaign and the professional programme succeed or fail together. The B2C2B link is where the two meet, and it deserves its own journey, content and follow-up.',
   ],

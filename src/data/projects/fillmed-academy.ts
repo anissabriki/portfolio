@@ -45,7 +45,7 @@ export const fillmedAcademy: Project = {
     { title: 'Segmentation model', note: 'Asset needed: the segmentation logic, anonymised.' },
   ],
   results: [
-    'No engagement or completion figures are published here: they belong to FILLMED.',
+    
     'What the work was built to achieve: a learning experience that scales beyond in-person training, and communication that reaches the right professionals at the right moment in their relationship with the brand.',
     'What I took from it: a learning platform without CRM is a library nobody is invited to. The value comes from connecting content, segmentation and timing.',
   ],

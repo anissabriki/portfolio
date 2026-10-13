@@ -59,12 +59,12 @@ export const medicalEvents: Project = {
     { title: 'Other events and trainings', note: 'To be listed once confirmed: name, location, year and my contribution.' },
   ],
   results: [
-    'Attendance and lead figures from FILLMED events are not published here.',
+    
     'What the work was built to achieve: events that continue after the stand is dismantled, through registration journeys before and communication after.',
     'What I took from it: the event is the visible part. The value is created in the invitation that brought the right physicians and the follow-up that keeps the conversation going.',
   ],
   attribution: {
-    mine: ['My involvement in event coordination, activation and promotion', 'Communication with physicians and coordination with KOLs and speakers', 'Creative production I worked on, including the 3D syringe project'],
+    mine: ['Event coordination, activation and promotion', 'Communication with physicians and coordination with KOLs and speakers', 'Creative production, including the 3D syringe project'],
     brand: ['FILLMED’s presence, booths and scientific programme at each congress', 'The congresses themselves, organised by IMCAS and AMWC', 'KOL relationships held by FILLMED’s medical and commercial teams'],
     today: ['FILLMED continues to take part in international congresses. Only the editions I took part in are shown here.'],
   },

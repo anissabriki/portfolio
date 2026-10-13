@@ -45,12 +45,12 @@ export const fillmedWebsite: Project = {
     { title: 'Before / after', note: 'Only if supported by authentic captures of both versions.' },
   ],
   results: [
-    'I do not publish traffic or performance figures from FILLMED’s accounts.',
+    
     'What the work was built to achieve: a site where physicians and consumers each find a clear path, content that is consistent across markets, and social channels that support product education rather than only promotion.',
     'What I took from it: on a two-audience brand, information architecture is a marketing decision. Deciding what a physician sees first shapes everything downstream.',
   ],
   attribution: {
-    mine: ['My involvement in the website’s restructuring, architecture, UX and SEO', 'Social media strategy, editorial planning and content coordination on Instagram', 'Coordination with international markets on content'],
+    mine: ['Website restructuring, architecture, UX and SEO', 'Social media strategy, editorial planning and content coordination on Instagram', 'Coordination with international markets on content'],
     brand: ['The FILLMED brand identity and art direction', 'Global brand campaigns and their creative concepts'],
     today: ['fillmed.com presents the product ranges, the E-Academy and a “Find a doctor” locator.'],
   },
