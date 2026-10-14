@@ -93,6 +93,35 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
       </section>
     )}
 
+    {p.journeys && (
+      <section class="bg-bordeaux py-16 text-paper md:py-24">
+        <div class="wrap">
+          <p class="eyebrow !text-rose">User journeys</p>
+          <h2 class="display mt-4 max-w-[16ch] text-[clamp(2.6rem,6.5vw,6rem)]">{p.journeys.title}</h2>
+          <p class="mt-6 max-w-2xl text-lg text-paper/80">{p.journeys.intro}</p>
+          <div class="mt-12 space-y-px bg-rose/40">
+            {p.journeys.items.map((j, k) => (
+              <div class="reveal grid gap-6 bg-bordeaux py-8 md:grid-cols-12 md:gap-8">
+                <div class="md:col-span-3">
+                  <p class="font-serif text-2xl italic text-rose">{String(k + 1).padStart(2, '0')}</p>
+                  <h3 class="mt-1 font-serif text-3xl leading-tight">{j.name}</h3>
+                  <p class="mt-2 text-sm text-paper/65">{j.who}</p>
+                </div>
+                <ol class="flex flex-wrap items-stretch gap-2 md:col-span-9 md:flex-nowrap">
+                  {j.steps.map((s, i) => (
+                    <li class="flex flex-1 items-center gap-2">
+                      <span class="flex min-h-[4.5rem] w-full items-center border border-rose/40 px-4 py-3 text-[15px] font-semibold leading-snug">{s}</span>
+                      {i < j.steps.length - 1 && <span class="hidden text-rose md:inline" aria-hidden="true">→</span>}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     {p.assessment && (
       <section class="wrap py-14 md:py-20">
         <h2 class="display max-w-[20ch] text-[clamp(2rem,4.4vw,3.8rem)]">{p.assessment.title}</h2>
