@@ -44,8 +44,8 @@ export const nctf: Project = {
   tools: [],
   toolGroups: [
     { title: 'Digital Marketing', items: ['Social media', 'Digital campaigns', 'Landing pages', 'Website content'] },
-    { title: 'CRM & Engagement', items: ['Email marketing', 'Audience segmentation', 'Automated communications'] },
-    { title: 'Analytics & Optimization', items: ['Performance reporting', 'Campaign optimization'] },
+    { title: 'CRM & Engagement', items: ['Klaviyo', 'Email marketing', 'Audience segmentation', 'Automated communications'] },
+    { title: 'Analytics & Optimization', items: ['GA4', 'Performance reporting', 'Campaign optimization'] },
     { title: 'Medical Marketing', items: ['HCP communications', 'KOL collaboration', 'Webinars', 'Drive-to-clinic initiatives'] },
   ],
   evidence: [
