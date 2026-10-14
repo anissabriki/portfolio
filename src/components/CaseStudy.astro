@@ -18,6 +18,9 @@ const i = projects.findIndex((x) => x.slug === p.slug);
 const next = projects[(i + 1) % projects.length];
 const evidence = p.evidence.filter((e) => e.src);
 const feature = p.feature && (p.feature.image || p.feature.video) ? p.feature : undefined;
+const learn = (s: string) => /^What I took from it:/.test(s);
+const impact = p.results.filter((s) => !learn(s));
+const learnings = p.results.filter(learn).map((s) => s.replace(/^What I took from it:\s*/, '').replace(/^./, (c) => c.toUpperCase()));
 const tools = p.tools.filter((t) => site.draft || !t.confirm);
 const refs = ((references as Record<string, Reference[]>)[p.slug] || []);
 // LinkedIn posts are shown through LinkedIn's own embed: the content stays hosted by its publisher, nothing is copied.
@@ -250,10 +253,21 @@ const statusTone = { LIVE: 'bg-burgundy text-paper', 'IN DEVELOPMENT': 'bg-sand 
       </section>
     )}
 
-    <section class="wrap grid gap-10 py-14 md:grid-cols-12 md:py-20">
-      <h2 class="eyebrow md:col-span-3">{L.results}</h2>
-      <div class="space-y-5 text-lg md:col-span-8">{p.results.map((t) => <p class="reveal">{t}</p>)}</div>
-    </section>
+    {impact.length > 0 && (
+      <section class="wrap grid gap-10 py-14 md:grid-cols-12 md:py-20">
+        <h2 class="eyebrow md:col-span-3">{L.results}</h2>
+        <div class="space-y-5 text-lg md:col-span-8">{impact.map((t) => <p class="reveal">{t}</p>)}</div>
+      </section>
+    )}
+
+    {learnings.length > 0 && (
+      <section class="bg-paper-2 py-14 md:py-20">
+        <div class="wrap grid gap-10 md:grid-cols-12">
+          <h2 class="eyebrow md:col-span-3">{L.learnings}</h2>
+          <div class="md:col-span-9">{learnings.map((t) => <p class="reveal display text-[clamp(1.7rem,3.4vw,3rem)] leading-tight">{t}</p>)}</div>
+        </div>
+      </section>
+    )}
 
     {p.links && (
       <section class="wrap border-t border-line py-10">
