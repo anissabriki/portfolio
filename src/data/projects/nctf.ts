@@ -41,12 +41,12 @@ export const nctf: Project = {
     'On the consumer side, it centred on awareness and understanding: educational content, social campaigns and product storytelling that prepares a patient for an informed conversation with a practitioner.',
     'The B2C2B layer is what makes the system work commercially: a clear route from interest to a practitioner, supported by the Find a Doctor journey and CRM follow-up.',
   ],
-  tools: [
-    { name: 'CRM platform', confirm: true },
-    { name: 'Email marketing platform', confirm: true },
-    { name: 'Website CMS', confirm: true },
-    { name: 'Social media (Instagram, LinkedIn)' },
-    { name: 'Web analytics', confirm: true },
+  tools: [],
+  toolGroups: [
+    { title: 'Digital Marketing', items: ['Social media', 'Digital campaigns', 'Landing pages', 'Website content'] },
+    { title: 'CRM & Engagement', items: ['Email marketing', 'Audience segmentation', 'Automated communications'] },
+    { title: 'Analytics & Optimization', items: ['Performance reporting', 'Campaign optimization'] },
+    { title: 'Medical Marketing', items: ['HCP communications', 'KOL collaboration', 'Webinars', 'Drive-to-clinic initiatives'] },
   ],
   evidence: [
     { title: 'B2B / B2C / B2C2B ecosystem', note: 'Diagram of the three audiences and how they connect. Rebuilt for this portfolio from the campaign structure.', wide: true },
